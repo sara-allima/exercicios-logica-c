@@ -13,18 +13,31 @@ Gravar na variável excesso a quantidade de quilos além do limite
 e na variável multa o valor da multa que João deverá pagar.
 Imprima os dados do programa com as mensagens adequadas.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
+#include <iostream>
+
+using namespace std;
+
 int main()
 {
     float peso, excesso, multa;
-    printf("Digite o peso em kg da pescaria de hoje: ");
-    scanf("%f", &peso);
-    excesso = peso - 50;
-    multa = excesso * 4;
-    printf("Você pescou %.2fkg em excesso, e terá que pagar R$%.2f de multa.",
-           excesso, multa);
-    return 0;
+    
+    cout << "Quantos kg de peixe voce trouxe?" << endl;
+    cin >> peso;
+
+    
+    if (peso > 50)
+    {
+        excesso = peso - 50;
+        multa = excesso * 4;
+
+        cout << "Sua leva excedeu " << excesso << "kg" << endl;
+        cout << "Voce devera pagar uma multa de R$" << multa;
+    } else
+    {
+        cout << "Peso dentro do limite permitido. Sem multa.";
+    }
+    
+    
+
+
 }

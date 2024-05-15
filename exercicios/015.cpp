@@ -14,41 +14,40 @@ calcule os descontos e o salário líquido, conforme a tabela abaixo:
     + Salário Bruto : R$
     - IR (11%) : R$
     - INSS (8%) : R$
-    - Sindicato ( 5%) : R$
+    - Sindicato (5%) : R$
     = Salário Liquido : R$
 
 Obs.: Salário Bruto - Descontos = Salário Líquido.
 */
-#include <stdio.h>
-#include <ctype.h>
+#include <iostream>
 #include <cmath>
-#include <cstring>
+
+using namespace std;
+
 int main()
 {
-    float salarioHora,
-        horasTrabalhadas,
-        IR,
-        INSS,
-        sindicato,
-        salarioLiquido,
-        salarioBruto;
+    float ganhoHora, horasMes, salarioBruto, inss, ir, sindicato, salarioLiquido;
 
-    printf("Digite quanto voce recebe por hora: ");
-    scanf("%f", &salarioHora);
-    printf("Digite quantas horas voce trabalhou esse mes: ");
-    getchar();
-    scanf("%f", &horasTrabalhadas);
+    cout << "Quanto voce ganha por hora?" << endl;
+    cout << "R$";
+    cin >> ganhoHora;
 
-    salarioBruto = salarioHora * horasTrabalhadas;
-    IR = salarioBruto * (11.0 / 100);
-    INSS = salarioBruto * (8.0 / 100);
-    sindicato = salarioBruto * (5.0 / 100);
-    salarioLiquido = salarioBruto - IR - INSS - sindicato;
+    cout << "Quantas horas voce trabalhou esse mes?" << endl;
+    cin >> horasMes;
 
-    printf("+ Salário Bruto : R$%.2f\n", salarioBruto);
-    printf("- IR (11%) : R$%.2f\n", IR);
-    printf("- INSS (8%) : R$%.2f\n", INSS);
-    printf("- Sindicato ( 5%) : R$%.2f\n", sindicato);
-    printf("= Salário Liquido : R$%.2f", salarioLiquido);
-    return 0;
+
+    salarioBruto = ganhoHora * horasMes;
+
+    ir = salarioBruto * 0.11;
+    inss = salarioBruto * 0.08;
+    sindicato = salarioBruto * 0.05;
+
+    salarioLiquido = salarioBruto - (ir + inss + sindicato);
+
+    cout << "Seu salario bruto foi de R$" << salarioBruto << endl;
+    cout << "Imposto de Renda (11%): R$ " << ir << endl;
+    cout << "INSS (8%): R$" << inss << endl;
+    cout << "Sindicado (5%): R$" << sindicato << endl;
+    cout << "Seu salario liquido foi de R$" << salarioLiquido;
+
 }

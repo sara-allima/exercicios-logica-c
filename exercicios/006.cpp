@@ -1,10 +1,10 @@
 /*
 Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
 */
-#include <stdio.h>
-#include <ctype.h>
-#include <cmath>
-#include <cstring>
+#include <iostream>
+
+using namespace std;
+
 int main()
 {
     float raio, area;
